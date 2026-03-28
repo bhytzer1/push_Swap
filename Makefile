@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: dmandric <dmandric@student.42.fr>          +#+  +:+       +#+         #
+#    By: davide <davide@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/03/01 18:47:20 by dmandric          #+#    #+#              #
-#    Updated: 2026/03/01 18:47:21 by dmandric         ###   ########.fr        #
+#    Updated: 2026/03/15 04:46:56 by davide           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,14 @@ CFLAGS		= -Wall -Wextra -Werror
 LIBFT_DIR	= libft
 LIBFT		= $(LIBFT_DIR)/libft.a
 
-SRC		= push_swap.c
+SRC		= main.c \
+		  push_swap.c \
+		  utils.c \
+		  moves/moves.c \
+		  moves/pa_pb.c \
+		  moves/sa_sb_ss.c \
+		  moves/ra_rb_rr.c \
+		  moves/rra_rrb_rrr.c
 
 OBJ		= $(SRC:.c=.o)
 
@@ -43,4 +50,7 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re
+run: all
+	./$(NAME)
+
+.PHONY: all clean fclean re run
