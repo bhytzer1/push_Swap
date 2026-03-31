@@ -6,7 +6,7 @@
 /*   By: davide <davide@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/26 11:02:30 by dmandric          #+#    #+#             */
-/*   Updated: 2026/03/25 16:42:05 by davide           ###   ########.fr       */
+/*   Updated: 2026/03/30 22:46:00 by davide           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,12 @@
 typedef struct	s_node
 {
 	int	value;
+	int	index;
+
+	int				cost_a;
+	int				cost_b;
+	struct s_node	*target_node;
+
 	struct s_node*	next;
 	struct s_node*	prev;
 }	t_node;
@@ -40,6 +46,12 @@ void	rr(t_node **stack_a, t_node **stack_b);
 void	rra(t_node **stack_a);
 void	rrb(t_node **stack_b);
 void	rrr(t_node **stack_a, t_node **stack_b);
+
+t_node	*get_max_node(t_node *stack_b);
+t_node	*get_target(t_node *nodo_a, t_node *stack_b);
+int		cost_value(t_node *node, int total);
+int		stack_size(t_node *stack);
+void	set_index(t_node *stack);
 
 int		is_valid_number(char *str);
 long	ft_atol(const char *str);

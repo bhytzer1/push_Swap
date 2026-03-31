@@ -21,6 +21,8 @@ LIBFT		= $(LIBFT_DIR)/libft.a
 SRC		= main.c \
 		  push_swap.c \
 		  utils.c \
+		  sort.c \
+		  utils_sort.c \
 		  moves/moves.c \
 		  moves/pa_pb.c \
 		  moves/sa_sb_ss.c \
