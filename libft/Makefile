@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: dmandric <dmandric@student.42.fr>          +#+  +:+       +#+         #
+#    By: davide <davide@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/25 18:10:37 by dmandric          #+#    #+#              #
-#    Updated: 2025/12/19 23:10:00 by dmandric         ###   ########.fr        #
+#    Updated: 2026/03/31 23:37:46 by davide           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,7 +47,8 @@ SRC = ft_isalpha.c \
       ft_putstr_fd.c \
       ft_putendl_fd.c \
       ft_putnbr_fd.c \
-		
+      ft_abs.c \
+
 OBJ		= ${SRC:.c=.o}
 
 all: $(NAME)

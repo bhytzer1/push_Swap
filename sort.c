@@ -6,7 +6,7 @@
 /*   By: davide <davide@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/28 17:27:52 by davide            #+#    #+#             */
-/*   Updated: 2026/03/30 22:40:31 by davide           ###   ########.fr       */
+/*   Updated: 2026/04/02 02:09:40 by davide           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include "push_swap.h"
 #include <limits.h>
 
@@ -49,7 +50,7 @@ t_node *get_target(t_node *nodo_a, t_node *stack_b)
 	return (final_target);
 }
 
-t_node	*get_max_node(t_node	*stack_b)
+t_node *get_max_node(t_node	*stack_b)
 {
 	t_node	*x;
 	long	max_value;
@@ -69,6 +70,27 @@ t_node	*get_max_node(t_node	*stack_b)
 	return (x);
 }
 
+t_node *get_cheapest_node(t_node	*a_curr)
+{
+	t_node	*x;
+	long	min_value;
+	int		total_cost;
 
+	x = NULL;
+	min_value = LONG_MAX;
+
+	while (a_curr != NULL)
+	{
+		total_cost = ft_abs(a_curr->cost_a) + ft_abs(a_curr->cost_b);
+
+		if (total_cost < min_value)
+		{
+			min_value = total_cost;
+			x = a_curr;
+		}
+		a_curr = a_curr->next;
+	}
+	return (x);
+}
 
 

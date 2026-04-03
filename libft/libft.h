@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dmandric <dmandric@student.42.fr>          +#+  +:+       +#+        */
+/*   By: davide <davide@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/25 17:15:08 by dmandric          #+#    #+#             */
-/*   Updated: 2025/12/19 23:11:14 by dmandric         ###   ########.fr       */
+/*   Updated: 2026/03/31 23:37:20 by davide           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ int		ft_isascii(int c);
 int		ft_isprint(int i);
 int		ft_toupper(int c);
 int		ft_tolower(int c);
+int		ft_abs(int negative_nbr);
 
 // Memoria (memory/bzero/memset/memcpy/memmove)
 void	ft_putnbr_fd(int n, int fd);

@@ -6,7 +6,7 @@
 /*   By: davide <davide@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/26 11:02:30 by dmandric          #+#    #+#             */
-/*   Updated: 2026/03/30 22:46:00 by davide           ###   ########.fr       */
+/*   Updated: 2026/03/31 22:56:30 by davide           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ typedef struct	s_node
 
 	int				cost_a;
 	int				cost_b;
-	struct s_node	*target_node;
+	struct s_node	*target;
 
 	struct s_node*	next;
 	struct s_node*	prev;
