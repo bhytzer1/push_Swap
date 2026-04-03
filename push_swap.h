@@ -11,22 +11,20 @@
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
-#define PUSH_SWAP_H
+# define PUSH_SWAP_H
 
-#include <stddef.h>
-#include <unistd.h>
+# include <stddef.h>
+# include <unistd.h>
 
-typedef struct	s_node
+typedef struct s_node
 {
-	int	value;
-	int	index;
-
+	int				value;
+	int				index;
 	int				cost_a;
 	int				cost_b;
 	struct s_node	*target;
-
-	struct s_node*	next;
-	struct s_node*	prev;
+	struct s_node	*next;
+	struct s_node	*prev;
 }	t_node;
 
 t_node	*last_node(t_node *stack);
@@ -48,10 +46,17 @@ void	rrb(t_node **stack_b);
 void	rrr(t_node **stack_a, t_node **stack_b);
 
 t_node	*get_max_node(t_node *stack_b);
+t_node	*get_min_node(t_node *stack_a);
 t_node	*get_target(t_node *nodo_a, t_node *stack_b);
+t_node	*get_cheapest_node(t_node *a_curr);
+void	same_moves(t_node **stack_a, t_node **stack_b, t_node *value);
+void	not_same_moves(t_node **stack_a, t_node **stack_b, t_node *value);
+t_node	*target_a(t_node *b_node, t_node *stack_a);
+
 int		cost_value(t_node *node, int total);
 int		stack_size(t_node *stack);
 void	set_index(t_node *stack);
+void	set_cost(t_node *stack_a, t_node *stack_b);
 
 int		is_valid_number(char *str);
 long	ft_atol(const char *str);

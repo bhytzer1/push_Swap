@@ -10,23 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   sort.c                                             :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: davide <davide@student.42.fr>              +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/28 00:00:00 by davide            #+#    #+#             */
-/*   Updated: 2026/03/28 00:00:00 by davide           ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "libft.h"
 #include "push_swap.h"
 #include <limits.h>
 
-t_node *get_target(t_node *nodo_a, t_node *stack_b)
+t_node	*get_target(t_node *nodo_a, t_node *stack_b)
 {
 	t_node	*b_current;
 	t_node	*final_target;
@@ -35,7 +23,6 @@ t_node *get_target(t_node *nodo_a, t_node *stack_b)
 	b_current = stack_b;
 	final_target = NULL;
 	best_value = LONG_MIN;
-
 	while (b_current != NULL)
 	{
 		if (b_current->value < nodo_a->value && b_current->value > best_value)
@@ -50,15 +37,33 @@ t_node *get_target(t_node *nodo_a, t_node *stack_b)
 	return (final_target);
 }
 
-t_node *get_max_node(t_node	*stack_b)
+t_node	*get_min_node(t_node *stack_a)
+{
+	t_node	*x;
+	long	min_value;
+
+	x = NULL;
+	min_value = LONG_MAX;
+	while (stack_a != NULL)
+	{
+		if (stack_a->value < min_value)
+		{
+			min_value = stack_a->value;
+			x = stack_a;
+		}
+		stack_a = stack_a->next;
+	}
+	return (x);
+}
+
+t_node	*get_max_node(t_node *stack_b)
 {
 	t_node	*x;
 	long	max_value;
 
 	x = NULL;
 	max_value = LONG_MIN;
-
-	while (stack_b	!= NULL)
+	while (stack_b != NULL)
 	{
 		if (stack_b->value > max_value)
 		{
@@ -70,7 +75,7 @@ t_node *get_max_node(t_node	*stack_b)
 	return (x);
 }
 
-t_node *get_cheapest_node(t_node	*a_curr)
+t_node	*get_cheapest_node(t_node *a_curr)
 {
 	t_node	*x;
 	long	min_value;
@@ -78,11 +83,9 @@ t_node *get_cheapest_node(t_node	*a_curr)
 
 	x = NULL;
 	min_value = LONG_MAX;
-
 	while (a_curr != NULL)
 	{
 		total_cost = ft_abs(a_curr->cost_a) + ft_abs(a_curr->cost_b);
-
 		if (total_cost < min_value)
 		{
 			min_value = total_cost;
@@ -92,5 +95,3 @@ t_node *get_cheapest_node(t_node	*a_curr)
 	}
 	return (x);
 }
-
-
